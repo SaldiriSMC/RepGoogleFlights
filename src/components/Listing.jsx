@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import ReactPaginate from "react-paginate";
-
-const ITEMS_PER_PAGE = 10; // Number of items to display per page
+import { FaStar } from "react-icons/fa";
+const ITEMS_PER_PAGE = 10;
 
 const ListingPage = ({ flightsList }) => {
   const itineraries = flightsList?.itineraries || [];
   const [currentPage, setCurrentPage] = useState(0);
-  if (!Array.isArray(itineraries) || itineraries.length === 0) {
+  if ((!Array.isArray(itineraries) || itineraries.length === 0)&&  flightsList?.context?.status) {
     return (
-      <div className="text-center mt-10 text-gray-600">
+      <div className="text-center mt-10">
         <p>No flights found or something went wrong. Please try again later.</p>
       </div>
     );
@@ -29,9 +29,26 @@ const ListingPage = ({ flightsList }) => {
           className="itinerary-card border p-4 mb-4 rounded shadow"
         >
           {/* Price */}
-          <div className="price text-lg font-bold text-blue-600">
-            {itinerary.price.formatted}
-          </div>
+          
+          {index ===0 &&(
+             <div className="price text-lg font-bold text-blue-600">
+             {itinerary.price.formatted} <span className="text-yellow-600">Best Deal</span> 
+             <div className="flex space-x-1 items-center justify-center">
+              <FaStar className="text-yellow-500" />
+              <FaStar className="text-yellow-500" />
+              <FaStar className="text-yellow-500" />
+              <FaStar className="text-yellow-500" />
+              <FaStar className="text-yellow-500" />
+             </div>
+           </div>
+          )}
+
+          {index>0 &&(
+            <div className="price text-lg font-bold text-blue-600">
+             {itinerary.price.formatted} Best Deal
+             </div>
+          )}
+         
 
           {/* Leg Details */}
           <div className="flex justify-between md:px-6 px-3">
@@ -43,7 +60,7 @@ const ListingPage = ({ flightsList }) => {
                     <img
                       src={leg.carriers.marketing[0]?.logoUrl}
                       alt={leg.carriers.marketing[0]?.name}
-                      className="md:h-12 md:w-12 h-6 w-6 mr-2 mb-3"
+                      className="md:h-8 md:w-8 h-6 w-6 mr-2 mb-3"
                     />
                     <span className="text-sm">
                       {leg.carriers.marketing[0]?.name}

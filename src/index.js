@@ -1,21 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { Provider } from 'react-redux';
 import reportWebVitals from './reportWebVitals';
 import AppRoutes from './routes/AppRoutes';
-import store from './redux/store';
 import { ThemeProvider } from './ThemeContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
     <ThemeProvider>
     <AppRoutes />
     </ThemeProvider>
-    </Provider>
-
   </React.StrictMode>
 );
 

@@ -5,6 +5,8 @@ import Listing from "../components/Listing";
 const Home = () => {
   const { theme } = useTheme();
   const [flightsList,setFlightsList]=useState([])
+  const [loadingSearch, setLoadingSearch] = useState(false);
+
   return (
     <section
       className={`home flex flex-col items-center min-h-screen ${
@@ -36,7 +38,7 @@ const Home = () => {
       </div>
       <div className="w-full max-w-6xl mx-auto px-4 mt-10">
         <SearchForm setFlightsList={setFlightsList}/>
-        {flightsList?.itineraries?.length > 0 && <Listing flightsList={flightsList}/>}
+        <Listing flightsList={flightsList}/>
       </div>
     </section>
   );

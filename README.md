@@ -12,7 +12,8 @@ RepGoogleFlights is a project designed to replicate or simulate functionalities 
 
 ## Tech Stack
 - **Frontend:** ReactJS
-- **API Integration:** Uses external flight APIs ([RapidAPI](https://rapidapi.com/apiheya/api/sky-scrapper/playground/apiendpoint_efcce954-2563-41cb-97fc-b2abe7851b3d))
+- **API Integration:** Uses external flight APIs (sky-scrapper.p.rapidapi.com)
+- **Please use rapid API key and add it in .env file REACT_APP_RAPIDAPI_KEY variable
 
 
 ## Prerequisites

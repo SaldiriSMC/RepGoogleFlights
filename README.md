@@ -12,16 +12,13 @@ RepGoogleFlights is a project designed to replicate or simulate functionalities 
 
 ## Tech Stack
 - **Frontend:** ReactJS
-- **Backend:** Node.js, Express
-- **Database:** MongoDB (or any preferred database)
-- **API Integration:** Uses external flight APIs (e.g., Amadeus, Skyscanner, or others)
-- **Deployment:** Dockerized setup for easy deployment on cloud platforms (e.g., AWS, Google Cloud).
+- **API Integration:** Uses external flight APIs ([RapidAPI](https://rapidapi.com/apiheya/api/sky-scrapper/playground/apiendpoint_efcce954-2563-41cb-97fc-b2abe7851b3d))
+
 
 ## Prerequisites
 To run this project locally, ensure you have the following installed:
 - Node.js (v16 or higher)
 - npm or yarn
-- MongoDB
 - Git
 
 ## Installation

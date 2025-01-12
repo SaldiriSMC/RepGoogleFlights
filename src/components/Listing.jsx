@@ -45,7 +45,7 @@ const ListingPage = ({ flightsList }) => {
 
           {index>0 &&(
             <div className="price text-lg font-bold text-blue-600">
-             {itinerary.price.formatted} Best Deal
+             {itinerary.price.formatted}
              </div>
           )}
          

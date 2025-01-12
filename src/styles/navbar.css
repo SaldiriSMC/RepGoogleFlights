@@ -1,0 +1,15 @@
+.group:hover .dropdown {
+  display: block;
+}
+
+.dropdown {
+  display: none;
+}
+
+nav ul li a:hover {
+  color: #ff0000; /* Hover effect for links */
+}
+
+.dropdown-content a:hover {
+  text-decoration: underline;
+}
